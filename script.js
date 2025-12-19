@@ -69,16 +69,17 @@ document.getElementById('bookingForm').addEventListener('submit', function(event
     event.preventDefault();
     const name = document.getElementById('name').value;
     const email = document.getElementById('email').value;
+    const mobile = document.getElementById('mobile').value;
     const route = document.getElementById('route').value;
     const date = document.getElementById('date').value;
     const seats = getSelectedSeats();
     
-    if (name && email && route && date && seats.length > 0) {
-        let price = 150 * seats.length;
-        document.getElementById('confirmation').textContent = `Booking confirmed for ${name} on ${date} for route ${route}, Seats ${seats.join(', ')} at $${price}.  for details!`;
+    if (name && email && mobile && route && date && seats.length > 0) {
+        let price = 15 * seats.length;
+        document.getElementById('confirmation').textContent = `Booking confirmed for ${name} on ${date} for route ${route}, Seats ${seats.join(', ')} at $${price}. Check your email for details!`;
         
         const bookings = JSON.parse(localStorage.getItem('bookings')) || [];
-        bookings.push({ name, email, route, date, seats, price });
+        bookings.push({ name, email, mobile, route, date, seats, price });
         localStorage.setItem('bookings', JSON.stringify(bookings));
         
         updateGrid();
