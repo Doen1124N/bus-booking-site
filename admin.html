@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - Professional Bus Bookings</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo.jpeg" alt="Your Business Logo" width="100">
+        </div>
+        <h1>Admin Panel</h1>
+        <nav>
+            <a href="index.html">Back to Site</a>
+        </nav>
+    </header>
+    
+    <section id="login" style="display: block;">
+        <h2>Admin Login</h2>
+        <form id="loginForm">
+            <label for="username">Username:</label>
+            <input type="text" id="username" required>
+            
+            <label for="password">Password:</label>
+            <input type="password" id="password" required>
+            
+            <button type="submit">Login</button>
+        </form>
+        <p id="loginMessage"></p>
+    </section>
+    
+    <section id="dashboard" style="display: none;">
+        <h2>Dashboard</h2>
+        <h3>Manage Bookings</h3>
+        <ul id="bookingsList"></ul>
+        
+        <h3>Add New Route</h3>
+        <form id="addRouteForm">
+            <label for="newRoute">Route Name:</label>
+            <input type="text" id="newRoute" required>
+            
+            <label for="newPrice">Price:</label>
+            <input type="number" id="newPrice" required>
+            
+            <button type="submit">Add Route</button>
+        </form>
+        
+        <button id="logout">Logout</button>
+    </section>
+    
+    <footer>
+        <p>&copy; 2026 Tours & Travels. All rights reserved.</p>
+    </footer>
+    
+    <script src="admin.js"></script>
+</body>
+</html>
