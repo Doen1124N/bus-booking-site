@@ -1,6 +1,10 @@
 const adminUser = 'admin1';
 const adminPass = 'Deep@2005';
 
+
+const adminUser = 'admin';
+const adminPass = 'password123';
+
 function loadBookings() {
     const bookings = JSON.parse(localStorage.getItem('bookings')) || [];
     const list = document.getElementById('bookingsList');
@@ -20,6 +24,9 @@ function loadBookings() {
     });
 }
 
+// Polling for real-time updates (checks every 10 seconds)
+setInterval(loadBookings, 10000);
+
 document.getElementById('loginForm').addEventListener('submit', function(event) {
     event.preventDefault();
     const username = document.getElementById('username').value;
@@ -28,7 +35,7 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
     if (username === adminUser && password === adminPass) {
         document.getElementById('login').style.display = 'none';
         document.getElementById('dashboard').style.display = 'block';
-        loadBookings();
+        loadBookings();  // Load immediately on login
     } else {
         document.getElementById('loginMessage').textContent = 'Invalid credentials!';
     }
