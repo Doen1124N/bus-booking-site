@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Professional Bus Booking - [Your Business Name]</title>
+    <title>Admin Panel - Professional Bus Bookings</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -11,69 +11,49 @@
         <div class="logo">
             <img src="logo.png" alt="Your Business Logo" width="100">
         </div>
-        <h1>Welcome to [Your Business Name] Bus Bookings</h1>
+        <h1>Admin Panel</h1>
         <nav>
-            <a href="#home">Home</a>
-            <a href="#routes">Routes</a>
-            <a href="#book">Book Now</a>
-            <a href="#contact">Contact</a>
-            <a href="admin.html">Admin</a>
+            <a href="index.html">Back to Site</a>
         </nav>
     </header>
     
-    <section id="home">
-        <h2>Book Your Bus Tickets Easily</h2>
-        <p>Safe, affordable travel across Gujarat. Experience seamless booking with real-time seat selection.</p>
-    </section>
-    
-    <section id="routes">
-        <h2>Available Routes</h2>
-        <ul>
-            <li><strong>Jamnagar to Chotila</strong> - $15 (Departs: 8:00 AM, Arrives: 10:00 AM)</li>
-            <li><strong>Chotila to Jamnagar</strong> - $15 (Departs: 12:00 PM, Arrives: 2:00 PM)</li>
-        </ul>
-    </section>
-    
-    <section id="book">
-        <h2>Book Your Ticket</h2>
-        <form id="bookingForm">
-            <label for="name">Full Name:</label>
-            <input type="text" id="name" required>
+    <section id="login" style="display: block;">
+        <h2>Admin Login</h2>
+        <form id="loginForm">
+            <label for="username">Username:</label>
+            <input type="text" id="username" required>
             
-            <label for="email">Email Address:</label>
-            <input type="email" id="email" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" required>
             
-            <label for="mobile">Mobile Number:</label>
-            <input type="tel" id="mobile" pattern="[0-9]{10}" placeholder="e.g., 1234567890" required>
-            
-            <label for="route">Select Route:</label>
-            <select id="route" required>
-                <option value="">Choose Route</option>
-                <option value="Jamnagar-Chotila">Jamnagar to Chotila ($15)</option>
-                <option value="Chotila-Jamnagar">Chotila to Jamnagar ($15)</option>
-            </select>
-            
-            <label for="date">Travel Date:</label>
-            <input type="date" id="date" required>
-            
-            <label>Choose Seats (up to 4):</label>
-            <div id="seatGrid" class="seat-grid"></div>
-            
-            <button type="submit">Confirm Booking</button>
+            <button type="submit">Login</button>
         </form>
-        <p id="confirmation"></p>
+        <p id="loginMessage"></p>
     </section>
     
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <p>Email: info@yourbusiness.com | Phone: +91-123-456-7890</p>
-        <p>Address: [Your Address], Gujarat, India</p>
+    <section id="dashboard" style="display: none;">
+        <h2>Dashboard</h2>
+        <h3>Manage Bookings</h3>
+        <ul id="bookingsList"></ul>
+        
+        <h3>Add New Route</h3>
+        <form id="addRouteForm">
+            <label for="newRoute">Route Name:</label>
+            <input type="text" id="newRoute" required>
+            
+            <label for="newPrice">Price:</label>
+            <input type="number" id="newPrice" required>
+            
+            <button type="submit">Add Route</button>
+        </form>
+        
+        <button id="logout">Logout</button>
     </section>
     
     <footer>
-        <p>&copy; 2023 [Your Business Name]. All rights reserved. Powered by Professional Booking System.</p>
+        <p>&copy; 2023 [Your Business Name]. Admin Access Only.</p>
     </footer>
     
-    <script src="script.js"></script>
+    <script src="admin.js"></script>
 </body>
 </html>
