@@ -1,9 +1,5 @@
-const adminUser = 'admin1';
+const adminUser = 'Admin1';
 const adminPass = 'Deep@2005';
-
-
-const adminUser = 'admin';
-const adminPass = 'password123';
 
 function loadBookings() {
     const bookings = JSON.parse(localStorage.getItem('bookings')) || [];
