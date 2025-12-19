@@ -7,7 +7,7 @@ function loadBookings() {
     list.innerHTML = '';
     bookings.forEach((booking, index) => {
         const li = document.createElement('li');
-        li.textContent = `${booking.name} - ${booking.route} on ${booking.date}, Seats ${booking.seats.join(', ')} (${booking.email}) - $${booking.price}`;
+        li.textContent = `${booking.name} - ${booking.route} on ${booking.date}, Seats ${booking.seats.join(', ')} (${booking.email}, ${booking.mobile}) - $${booking.price}`;
         const deleteBtn = document.createElement('button');
         deleteBtn.textContent = 'Delete';
         deleteBtn.onclick = () => {
